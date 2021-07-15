@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZEPHYRNET</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url("https://i.pinimg.com/originals/38/45/f7/3845f7279613a7ae0442518f41039f4c.gif");
+        background-size: 300px auto;
+      }
+      main {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        margin: auto;
+      }
+      .content {
+        padding: 1rem;
+        
+      }
+      #container {
+        display: flex;
+        right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+    position: absolute;
+
+        
+      }
+
+      #clippy {
+        position: absolute;
+        z-index: 999;
+        left: 50%;
+        top: 80%;
+        position: fixed;
+        width: 18rem;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+
+      #orpheus {
+        position: absolute;
+        z-index: 999;
+        left: 10%;
+        top: 60%;
+        position: fixed;
+        width: 18rem;
+      }
+
+      #ascii-animate {
+        width: 50%;
+      }
+
+      #tree-view {
+        width: 10rem;
+      }
+    </style>
+    <script>
+      const removeClippy = (e) => {
+        document.getElementById("clippy").style.display = "none";
+      };
+
+      const removeOrpheus = (e) => {
+        document.getElementById("orpheus").style.display = "none";
+      };
+    </script>
+    <main>
+      <div class="window" id="orpheus">
+        <div class="title-bar">
+          <div class="title-bar-text">A message from Zorpheus</div>
+        </div>
+        <div class="content">
+          <p>
+            If you think you're ready to enter a brand-new world of hacking,
+            creation, and fuzzy friend-finding, hit that button and let's get
+            making!
+          </p>
+          <p>- With ❤️, the Zephyr team</p>
+        </div>
+      </div>
+      
+
+      <div class="window" id="container">
+        <ul class="tree-view" id="tree-view">
+          <li>../</li>
+          <li>welcome.md</li>
+          <li>zephyrNET.vba</li>
+          <li>deploy.cs</li>
+          <li>Special Thanks</li>
+        </ul>
+        
+        <div>
+          <div class="title-bar">
+            <div class="title-bar-text">Deployments</div>
+            <div class="title-bar-controls">
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="content">
+                
+            <div class="row">
+
+              <button>Upload Repository</button>
+              <p style="margin-left: 1rem;">None</p>
+            </div>
+            <br/>
+              <div class="field-row-stacked" >
+                <label for="domain">Domain</label>
+                <input placeholder="cdn.z.hack.af" id="domain" type="text" />
+              </div>
+              <div class="field-row-stacked" >
+                <label for="port">Port</label>
+                <input placeholder="8080" id="port" type="text" />
+              </div>
+              
+              <br/>
+
+              <button>Deploy 🚀</button>
+              
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
