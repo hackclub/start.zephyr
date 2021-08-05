@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Onboarding</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6a2c665b-45ed-4fd3-9b57-3dc76af619e9" class="page sans"><header><h1 class="page-title">Onboarding</h1></header><div class="page-body"><h1 id="c0e606eb-b062-46b9-9328-b6ef4cbf974d" class="">ZephyrNET</h1><p id="3bd8cf22-95a0-4576-93ce-37154b5c312e" class="">Yay!!</p><p id="6d55a1a2-85e4-45c4-8b67-9005720dc0d5" class="">You made it! THIS IS SOOOOO Egg-cITING 🥚 we&#x27;ll have so much fun for the next 10 days! (or, if you&#x27;re referencing this in the future, then 10-x days).</p><h1 id="3a5b7754-9406-4a25-8cba-f23ddc878f7a" class="">Introduction</h1><p id="31b8c600-2510-46ed-a5c8-de0124ff8c86" class="">Welcome to the ZephyrNET; your programming home for the next few days. Now that you&#x27;ve connected to the WiFi network, you can finally unlock the final level 😎.</p><p id="c01f20ae-4f41-4381-a9eb-2e33af7f9e6a" class="">You&#x27;ve made it this far — congrats! 👏 Let&#x27;s assume you&#x27;ve ssh&#x27;ed in with:<div class="indented"><p id="fee0add9-9ed1-45fc-8230-2e805d90603d" class=""><code>ssh username@zephyrnet.hackclub.com</code>.</p><p id="e366001b-b3c1-4d81-bf29-ce8bbbf5ce87" class=""><mark class="highlight-gray"><em>ssh </em></mark><strong><mark class="highlight-gray"><em>(secure shell protocol)</em></mark></strong><mark class="highlight-gray"><em> helps you get into the zephyrnet network instead of your computer network. you&#x27;ll also need to input your password each time you ssh in.</em></mark></p></div></p><p id="c11e6ea0-d0bf-453f-9e43-3fb285103baf" class="">🚢 Want to <mark class="highlight-yellow_background">ship</mark> something? Go to <code>chronicle.zephyr/</code> in your browser (keep the backslash!) to contribute any of your projects or experience!</p><p id="3c07be4c-01a7-459b-b884-983b2dbf8814" class="">You might be wondering, what&#x27;s this <code>.zephyr/</code>? It&#x27;s our TLD (top-level domain), which is the domain ending instead of .com or .org, completely self-hosted. You need a <code>/</code> because otherwise your browser interprets it as a google (<del>maybe bing</del>) search!</p><ul id="ddeb782a-a067-4753-b381-ac85acbe55e0" class="block-color-orange toggle"><li><details open=""><summary><strong>Want a more in-depth walkthrough for getting into the zephyrnet?</strong></summary><p id="e428cec4-d97d-452d-8f26-2cc1aa513d4b" class="">eyyy welcome to the hidden part of this guide 🤫</p><p id="4e6b7238-cff7-4bef-b3a0-2411a65a7b42" class="">to get into the zephrynet open your wifi → connect to ZephyrNet (the one with no password) </p><p id="4b0145df-89a1-4b91-b486-f252a1a8f97e" class="">now, open your command line or terminal (depending on system) and type in <code>ssh &lt;username&gt;@zephyrnet.hacklub.com</code> and type in your password once it asks!</p><p id="744c6c5e-f394-4687-bd44-bb4026bd663d" class="">Yay, you&#x27;re in!</p></details></li></ul><h1 id="e283276d-5d53-4472-801f-3b4ae4acbabd" class="">Working with Linux</h1><p id="6a5957aa-7bae-4c8b-b23d-19bec9120b17" class="">We have documentation on linux terminal commands at: (i&#x27;ll add the path to the docset)</p><p id="ad4ddf23-b318-4a84-96e5-2deb8c8d94a7" class="">Some of the most basic commands are:</p><ul id="64636afe-27aa-4bef-a63a-b19c4309b1a3" class="bulleted-list"><li><code>ls</code> → shows all the files in the folder, it stands for list</li></ul><ul id="57413818-c4e8-45fb-bc27-a6822094169d" class="bulleted-list"><li><code>cd &lt;directory&gt;</code> → gets you into a folder (aka directory), where the things in brackets are what you change (don&#x27;t keep the brackets). </li></ul><ul id="8a3a499c-fee1-40ae-8501-d6eb9339e545" class="bulleted-list"><li><code>touch &lt;filename</code> → creates a new file</li></ul><ul id="ab7a6409-e84f-4a28-9d00-83433edfc3e0" class="bulleted-list"><li><code>mkdir &lt;directory name&gt;</code> → makes a new directory (aka folder) which you can then cd into!</li></ul><ul id="e9ea38a1-e6aa-4923-a5d6-6b61fa043d71" class="bulleted-list"><li><code>vim &lt;filename&gt;</code> or <code>nano &lt;filename&gt;</code> → vim and nano are two editing tools in the terminal! </li></ul><p id="6e21544f-d97c-43a8-ac1d-e6f27cdec0f4" class="">
+</p><ul id="bf946bb4-b77f-492c-aff2-2e99e1c8bd30" class="toggle"><li><details open=""><summary><mark class="highlight-purple"><strong>Accessing a website (in detail)</strong></mark></summary><p id="c15b8790-64d1-441f-bf14-c3f82e564a97" class="">Now, you want to make a website? Well good for you!</p><p id="ff1ef812-1786-461c-acd7-3132e41d2596" class="">Go to <code>popcat.zephyr/</code> and <code>garden.zephyr/</code> to take a look at two examples! Now, how do you find the code?</p><p id="3462f988-5439-4762-a17a-02874ed649d3" class="">Open your terminal, type in <code>cd /opt/zephyrnet</code> . <code>cd</code> helps you get into a directory, which you might remember from above.</p><p id="57d40ac9-5fcc-4b5b-8635-bde32ecd5fe3" class="">If you now type <code>ls</code>, you&#x27;ll see all the folders in this folder, which are all the domains in the zephyrnet right now! To take a look at popcat, let&#x27;s try <code>ls popcat.zephyr/</code> which is letting us list the files in that folder! </p><p id="b9b13cc3-d188-4916-88f7-c5695120acb0" class="">Alternatively, you can type <code>cd popcat.zephyr/</code> so now you&#x27;re actually <em>in</em> the folder. Now, just doing <code>ls</code> works! You can see all the files here and you might notice an <code>index.html</code> file, some <code>css</code> files and so on. </p><p id="eead7c1d-74ca-4690-b7a3-88e36a67b564" class="">To edit the files you can now use vim or nano! Take a look at the commands above... or... you can do...</p></details></li></ul><h2 id="c48aafcf-371d-46b0-a4ca-7699e85b9d75" class="">VSCode (or other) Integration</h2><p id="dff9a099-fcd3-46a7-a3f0-338996dac4d8" class="">If you don&#x27;t really want to use vim or nano, VSCODE has a <em>great</em> tool for ssh&#x27;ing from the vscode app and editing there! Go to <a href="https://piratebay.zephyr/vscode">https://piratebay.zephyr/vscode</a> and download the app (if you don&#x27;t have it) and also the ssh plugin! </p><div id="90b5ba03-6d32-417c-9024-2d714e7715aa" class="column-list"><div id="5b56dcf4-6b5a-4f13-bb17-f2901988bb48" style="width:50%" class="column"><figure id="2bf69a53-7a71-4757-908d-951309d80fc3" class="image"><a href="Onboarding%202bf69a537a714757908d951309d80fc3/Screen_Shot_2021-07-15_at_3.39.29_PM.png"><img style="width:2476px" src="Onboarding%202bf69a537a714757908d951309d80fc3/Screen_Shot_2021-07-15_at_3.39.29_PM.png"/></a></figure></div><div id="e8b65527-76da-4357-b04c-e3d51bfdef3a" style="width:50%" class="column"><figure id="7eec5ec3-2310-4d52-ae42-3485dc441637" class="image"><a href="Onboarding%202bf69a537a714757908d951309d80fc3/Screen_Shot_2021-07-15_at_3.39.51_PM.png"><img style="width:2476px" src="Onboarding%202bf69a537a714757908d951309d80fc3/Screen_Shot_2021-07-15_at_3.39.51_PM.png"/></a></figure></div></div><p id="87d11103-06da-4c28-bbec-fd86c1d7d11b" class="">Take a look at these screenshots! If you&#x27;re in a place with no wifi to download the plugin, go to <code>piratebay.zephyr/</code> , find the vscode folder with the plugins and download it.</p><p id="a14edd32-4748-4ae2-b352-ae0f76a70686" class="">Atom also has a remote-ssh plugin you can use to do the same thing. </p><h1 id="89b15aa7-bfb1-48e5-b177-278ba39300dd" class="">Deploying</h1><p id="c6e95950-47d4-4390-8741-c7284e86a6db" class="">Deploying anything on ZNet is as easy as adding a couple items to the file system. Every single project hosted on the server can be found under <code>/opt/zephyrnet</code> (or <code>~/zephyrnet</code> —run <code>cd /opt/zephyrnet</code> to find them!) and are all editable—just make sure not to mess things up for others.</p><h2 id="772f394d-f82e-48cc-929a-60b986570432" class="">Deploying static sites</h2><p id="4dfcff5a-e496-49bf-b505-99f83bff8921" class="">Let&#x27;s say that you have an amazing site that you want to deploy under the domain <code>amazing.zephyr</code>. If you have an <code>index.html</code> file in the folder you can just go to the domain (name of the general folder) to find it! It is automatically deployed.</p><h2 id="21a0636b-6f3f-4012-a5cc-bcc82fa22947" class="">Deploying dynamic sites</h2><p id="b1c8ac32-24dd-476e-9b49-22e36a53284d" class="">Dynamic sites are a <em>biiiiiit</em> more complex. But do not fret! You&#x27;ve got this. Take a look at <code>nextjs-example-app.zephyr</code> for an example of a next.js site that was dynamically deployed. </p><p id="e21d7a41-d0ec-4844-9c8c-83bdd443347c" class="">After all ur dynamic code things, make a file <code>sudo touch entrypoint.sh</code> . Or, if you&#x27;re in a text editor, add a new file named <code>entrypoint.sh</code>. </p><ul id="83de914d-13e1-4e6e-a4f5-308c6028adf0" class="toggle"><li><details open=""><summary><mark class="highlight-yellow"><strong>Add this to entrypoint.sh</strong></mark></summary><pre id="6e9e4dca-e204-4949-ae04-64ed553c768d" class="code"><code># insert your script stuff after this line
+
+# ex: npm build (the build command)</code></pre><p id="fcd16f2a-cd8d-4d4f-8ff9-3b07eab0aa10" class="block-color-gray"><em>or whatever command you&#x27;d need → it should have the command you want us to run to start your server, such as </em><em><code>yarn start</code></em><em>.</em></p></details></li></ul><p id="9e168425-a3a5-4bae-b13a-1196741de0e5" class="">Now, if you have all your code ready, make <em>another file</em> named <a href="http://build.sh"><code>build.sh</code></a> that has the build command, such as <code>out</code> or whatnot.</p><ul id="0233e363-bcb9-4fa4-8630-72a66b59049e" class="toggle"><li><details open=""><summary><mark class="highlight-yellow"><strong>Example Build Commands</strong></mark></summary><ul id="1bcb1a8f-a143-4ae5-98ce-2d8db935db68" class="bulleted-list"><li><code>npm run dev</code> - node.js local server</li></ul><ul id="460c2473-e2a0-40e3-af74-9fae7bbc43df" class="bulleted-list"><li><code>npm run build</code> - build assets for production</li></ul><ul id="890235cf-e27a-40fe-9c54-b69e28722fa3" class="bulleted-list"><li><code>make</code> runs the makefile</li></ul><ul id="8d11f10f-3165-4d0f-820f-1f3678274c46" class="bulleted-list"><li><code>docker</code> runs the dockerfile</li></ul></details></li></ul><p id="be4a8d83-7f19-490f-8d97-c3b9c520de6d" class="">Make sure all of these files are all in your repository/folder so it runs!</p><h1 id="5cef78b2-3147-468b-a4c4-2cb318735b2f" class="">Things to Find</h1><p id="040212b1-b627-42e5-8470-9b799a284dc9" class="">If you&#x27;d like to access stackexchange, stackoverflow, wikipedia, and so on, go to <mark class="highlight-yellow_background"><a href="https://backrub.zephyr/">https://backrub.zephyr/</a></mark><mark class="highlight-yellow_background"> !</mark> It&#x27;s our version of google :)</p><p id="c04b6601-fb55-4c85-afee-b45a7831ed3e" class="">To get access to <del>legal</del> software and apps go to <mark class="highlight-yellow_background"><a href="https://piratebay.zephyr/">https://piratebay.zephyr/</a></mark>.</p><p id="dcb425c0-2832-4ed5-8e48-6ca27cd874d8" class="">As a reminder, our contribution graph portal is at <mark class="highlight-yellow_background"><a href="https://chronicle.zephyr/">https://chronicle.zephyr/</a></mark>!</p><p id="a22b9fbf-65f3-41a4-9344-76bdbf61801e" class="">To get to this page, go to <mark class="highlight-yellow_background"><a href="https://boible.zephyr/">https://boible.zephyr/</a></mark>. <em>(not online yet I think!, but will be soon, check back soon)</em></p><p id="5307de7b-7efb-4176-b96f-cdde3d5ab934" class="">
+</p><p id="aa8465d0-95f4-4df5-ae00-ba2dee78e768" class="">
+</p><p id="903fc4dd-ba19-4b9c-a5ae-ff757ae8065e" class=""><em>thanks for reading :) - claire</em></p><p id="bdc4bb9b-078c-436a-97c1-962936127c87" class=""><em>feel free to ask any of us any questions!</em></p></div></article></body></html>
